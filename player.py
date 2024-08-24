@@ -7,6 +7,7 @@ class Player(CircleShape):
         super().__init__(x, y, radius)
         self.position = pygame.Vector2(x, y)
         self.rotation = 0
+        self.containers = pygame.sprite.Group()
 
     def triangle(self):
         forward = pygame.Vector2(0, 1).rotate(self.rotation)
