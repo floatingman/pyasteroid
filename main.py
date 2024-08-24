@@ -39,6 +39,12 @@ def main():
                 print("Game Over")
                 sys.exit()
 
+        for entity in shots:
+            for other in asteroids:
+                if entity.detect_collision(other):
+                    entity.kill()
+                    other.kill()
+
         screen.fill("black")
         
         for entity in drawable:
