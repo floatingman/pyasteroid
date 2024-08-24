@@ -1,7 +1,7 @@
+import sys
 import pygame
 from asteroidfield import AsteroidField
 from constants import *
-from constants import SCREEN_WIDTH
 from player import Player
 from asteroid import Asteroid
 
@@ -30,6 +30,11 @@ def main():
 
         for entity in updateable:
             entity.update(dt)
+
+        for entity in asteroids:
+            if entity.detect_collision(player):
+                print("Game Over")
+                sys.exit()
 
         screen.fill("black")
         
