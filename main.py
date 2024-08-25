@@ -1,5 +1,6 @@
 import sys
 import pygame
+import asteroid
 from asteroidfield import AsteroidField
 from constants import *
 from player import Player
@@ -39,11 +40,11 @@ def main():
                 print("Game Over")
                 sys.exit()
 
-        for entity in shots:
-            for other in asteroids:
-                if entity.detect_collision(other):
-                    entity.kill()
-                    other.kill()
+        for shot in shots:
+            for asteroid in asteroids:
+                if asteroid.detect_collision(shot):
+                    shot.kill()
+                    asteroid.split()
 
         screen.fill("black")
         
