@@ -1,6 +1,5 @@
 import sys
 import pygame
-import asteroid
 from asteroidfield import AsteroidField
 from constants import *
 from player import Player
